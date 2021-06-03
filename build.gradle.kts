@@ -20,6 +20,8 @@ launch4j {
     headerType="gui"
     outfile = "CloaksPlusInstaller.exe"
     mainClassName = "me.jacobtread.cloaksplus.App"
+    bundledJrePath = "jre"
+    bundledJre64Bit = true
     icon = "${project.projectDir.absolutePath}/src/main/resources/icon.ico"
     manifest = "${project.projectDir.absolutePath}/app.manifest"
     dontWrapJar=false
@@ -34,6 +36,6 @@ tasks.withType<Jar> {
         from(zipTree(file.absoluteFile))
     }
     manifest {
-        attributes["Main-Class"] = "me.jacobtread.cloaksplus.Main"
+        attributes["Main-Class"] = "me.jacobtread.cloaksplus.App"
     }
 }
